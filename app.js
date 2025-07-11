@@ -6,6 +6,10 @@ const {body,validationResult} = require('express-validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+dotenv.config();
+const connectToDb = require('./config/db');
+connectToDb();
 
 
 app.set('view engine', 'ejs');
@@ -95,7 +99,7 @@ app.post('/login',
             email: user.email,
             username: user.username,
         },
-        "shhhh"
+        process.env.JWT_SECRET
     );
 
         res.cookie("token",token);
@@ -132,7 +136,7 @@ app.post('/post', isLoggedIn , async (req,res) => {
 function isLoggedIn(req,res,next){
     if(req.cookies.token === "") return res.status(400).redirect('/login');
         else {
-            let data = jwt.verify(req.cookies.token,"shhhh");
+            let data = jwt.verify(req.cookies.token, process.env.JWT_SECRET);
             req.user = data;
             next();
         }
