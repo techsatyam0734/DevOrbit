@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#f9fafb] text-gray-800 bg-zinc-800 dark:bg-zinc-800 dark:text-white">
+  <!-- Navbar -->
+  <header class="bg-zinc-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-extrabold text-blue-300 tracking-tight">
+        DevOrbit
+      </h1>
+
+       <div class="md:hidden">
+        <button id="menu-toggle" class="text-blue-300 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="hidden md:flex space-x-6">
+        <a href="/profile" class="text-blue-300 hover:text-blue-500 transition">New Post</a>
+        <a href="/login" class="text-blue-300 hover:text-blue-500 transition">Login</a>
+        <a href="/register" class="text-blue-300 hover:text-blue-500 transition">Sign Up</a>
+      </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden px-4 pb-4 md:hidden">
+      <a class="block py-2 text-blue-300 hover:text-blue-500 transition" href="/profile">New Post</a>
+      <a class="block py-2 text-blue-300 hover:text-blue-500 transition" href="/login">Login</a>
+      <a class="block py-2 text-blue-300 hover:text-blue-500 transition" href="/register">Sign Up</a>
+    </div>
+  </header>
+
+   <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="bg-zinc-800 py-16 text-center">
+    <h2 class="text-4xl font-bold text-blue-300 mb-2">Welcome to DevOrbit</h2>
+    <p class="text-white text-2xl mt-1">"Where every developer's journey becomes a story"</p>
+    <a href="/register" class= "mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm hover:bg-blue-700 transition">
+  Start Writing →
+</a>
+
+  </section>
+
+  
+  <!-- Feature Section -->
+  <section class="max-w-6xl mx-auto px-4 py-16 text-center">
+    <h2 class="text-2xl font-bold text-blue-300 mb-10">✨ Key Features of DevOrbit</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-zinc-700 rounded-xl p-6 shadow-md hover:shadow-lg transition">
+        <h3 class="text-white font-semibold mb-2">✍️ Write Blogs</h3>
+        <p class="text-white text-sm">Share your coding journey, tutorials, or thoughts.</p>
+      </div>
+      <div class="bg-zinc-700 rounded-xl p-6 shadow-md hover:shadow-lg transition">
+        <h3 class="text-white font-semibold mb-2">🔒 Secure Login</h3>
+        <p class="text-white text-sm">Sign in confidently with our secure and private login system.</p>
+      </div>
+      <div class="bg-zinc-700 rounded-xl p-6 shadow-md hover:shadow-lg transition">
+        <h3 class="text-white font-semibold mb-2">📚 Read From Peers</h3>
+        <p class="text-white text-sm">Explore posts from other developers around the world.</p>
+      </div>
+      <div class="bg-zinc-700 rounded-xl p-6 shadow-md hover:shadow-lg transition">
+        <h3 class="text-white font-semibold mb-2">❤️ Like & Appreciate</h3>
+        <p class="text-white text-sm">Support and encourage others with likes on their posts.</p>
+      </div>
+      <div class="bg-zinc-700 rounded-xl p-6 shadow-md hover:shadow-lg transition">
+        <h3 class="text-white font-semibold mb-2">📋 Personal Dashboard</h3>
+        <p class="text-white text-sm">Manage your posts in one place, edit or delete anytime.</p>
+      </div>
+      <div class="bg-zinc-700 rounded-xl p-6 shadow-md hover:shadow-lg transition">
+        <h3 class="text-white font-semibold mb-2">🛠️ Built for Developers</h3>
+        <p class="text-white text-sm">Simple, clean, and focused on what matters to devs.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-center text-xl font-medium text-white py-8 border-t border-zinc-700">
+      © 2025 DevOrbit - All rights reserved
+    </footer>
+  </section>
+
+</body>
+</html>

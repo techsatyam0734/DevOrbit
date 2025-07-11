@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+    }
+  </style>
+</head>
+<body class="bg-zinc-800 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-zinc-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+      <h1 class="text-2xl font-extrabold text-blue-300 tracking-tight mb-2 sm:mb-0">
+        DevOrbit
+      </h1>
+      <nav class="flex flex-wrap gap-2 sm:space-x-6">
+        <a href="/" class="text-blue-300 hover:text-blue-500 transition text-sm sm:text-base">Home</a>
+        <a href="/logout" class="text-red-300 hover:text-red-500 transition text-sm sm:text-base">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Edit Form Section -->
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <h5 class="mb-5 text-white text-lg">Edit your post</h5>
+    <form action="/update/<%= post._id %>" method="post" class="space-y-4">
+      <textarea 
+        placeholder="What's on your mind?" 
+        name="content" 
+        class="p-3 text-white block w-full sm:w-2/3 h-40 resize-none bg-transparent border-2 border-blue-500 rounded-md outline-blue-500"
+      ><%= post.content %></textarea>
+      <input 
+        class="px-4 py-2 bg-yellow-500 text-black text-sm rounded-md hover:bg-yellow-400 transition cursor-pointer" 
+        type="submit" 
+        value="Update post"
+      >
+    </form>
+  </div>
+</body>
+</html>
